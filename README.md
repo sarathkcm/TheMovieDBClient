@@ -32,7 +32,7 @@ Usage
 tmdb.call(url, params, success, error)
 ```
 url (String) : The method you want to call, beginning with "/". [See all methods here](http://docs.themoviedb.apiary.io/ "Going to APIary.io")  
-params (Object) : Set your parameters here. Api_key is already included, no need to add it again ;) For example calling method /search/movie) :
+params (Object) : Set your parameters here. Api_key is already included, no need to add it again ;) For example (calling method /search/movie) :
 ```json
 {
   "query": "The Hitchhiker's Guide to the Galaxy",

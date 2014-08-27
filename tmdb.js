@@ -1,4 +1,5 @@
 (function() {
+	"use strict";
 	window.tmdb = {
 		"api_key": "",
 		"base_uri": "http://api.themoviedb.org/3",

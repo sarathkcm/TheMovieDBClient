@@ -1,5 +1,4 @@
 (function() {
-	"use strict";
 	window.tmdb = {
 		"api_key": "",
 		"base_uri": "http://api.themoviedb.org/3",
@@ -19,18 +18,18 @@
 			};
 			xhr.open("GET", tmdb.base_uri + url + "?" + params_str, true);
 			xhr.setRequestHeader('Accept', 'application/json');
-			xhr.responseType = "json";
+			xhr.responseType = "text";
 			xhr.onreadystatechange = function () {
 				if (this.readyState === 4) {
 					if (this.status === 200){
 						if (typeof success == "function") {
-							success(this.response);	
+							success(JSON.parse(this.response));	
 						}else{
-							throw('No success callback, but the request worked')
+							throw('No success callback, but the request gave results')
 						}
 					}else{
 						if (typeof error == "function") {
-							error(this.response);
+							error(JSON.parse(this.response));
 						}else{
 							throw('No error callback')
 						}

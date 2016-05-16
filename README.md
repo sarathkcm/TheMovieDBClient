@@ -8,7 +8,7 @@ Usage
 
 Get your api key by signing up at [www.themoviedb.org](https://www.themoviedb.org/documentation/api)
 
-```
+```javascript
 var tmdb-client = require('themoviedb-client');
 var tmdb = new tmdb-client(your_api_key);
 
@@ -16,7 +16,36 @@ tmdb.call("/movie/293660", {})
     .then(function (data) {
         console.log(data);
     });
+    
 
+tmdb.call("/find/tt1431045", {external_source:"imdb_id"})
+    .then(function (data) {
+        console.log(data);
+    }); 
+
+```
+
+Various Urls defined inside the module are configurable
+
+```javascript
+tmdb.configure(
+    {
+        "host": "api.themoviedb.org",
+        "path": "/3",
+        "images_url": "http://image.tmdb.org/t/p",
+        "timeout": 5000,
+        "update_images_url": true
+    }
+);
+
+```
+
+To get Image Urls of TMDb posters and backdrops, use the following method
+
+```javascript
+// poster_path: poster/backdrop filename returned by TMDb api,
+// 'W500' : pre-defined size constant. See API documentation for details 
+var url = tmdb.getImageUrl(poster_path, 'w500');
 ```
 
 LICENCE

@@ -24,6 +24,7 @@ LICENCE
 The MIT License (MIT)
 
 Copyright (c) 2014 EtienneWan
+
 Copyright (c) 2016 Sarath KCM
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

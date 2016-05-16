@@ -1,8 +1,8 @@
 (function () {
-    var http = require('http');
     var tmdb = function (key) {
         if (!key)
             throw "Invalid API Key";
+        var http = require('http');
         var api_key = key;
         var settings = {
             "host": "api.themoviedb.org",

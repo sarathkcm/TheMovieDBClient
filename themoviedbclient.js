@@ -14,7 +14,7 @@
 
         var tmdbConfig = null;
 
-        this.prototype.updateApiConfiguration = function () {
+        tmdb.prototype.updateApiConfiguration = function () {
             if (!tmdbConfig && settings.update_images_url) {
                 tmdbConfig = {};
                 this.call("/configuration", {}).then(function (response) {
@@ -26,7 +26,7 @@
             }
         };
 
-        this.prototype.configure = function (options) {
+        tmdb.prototype.configure = function (options) {
             settings.host = options.host || settings.host;
             settings.path = options.path || settings.path;
             settings.images_url = options.host || settings.images_url;
@@ -34,7 +34,7 @@
             settings.update_images_url = options.update_images_url || settings.update_images_url;
         };
 
-        this.prototype.call = function (url, params) {
+        tmdb.prototype.call = function (url, params) {
             this.updateApiConfiguration();
             var params_str = "api_key=" + api_key;
             for (var key in params) {
@@ -67,7 +67,7 @@
 
                     });
 
-                    request.setTimeout(tmdb.timeout, function () {
+                    request.setTimeout(settings.timeout, function () {
                         reject("Request timed out: " + settings.path + url + "?" + params_str);
                     });
 
@@ -82,7 +82,7 @@
                 }
             });
         };
-        this.prototype.getImageUrl = function (filename, size) {
+        tmdb.prototype.getImageUrl = function (filename, size) {
             this.updateApiConfiguration();
             return tmdb.images_uri + size + filename;
         };

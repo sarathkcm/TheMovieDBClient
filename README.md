@@ -1,4 +1,4 @@
-TheMovieDB-Client
+TheMovieDBClient
 =======
 
 A simple node module to make calls to TheMovieDB API, based on EtienneWan's tmdb-js project, re-written with promises. 
@@ -9,7 +9,7 @@ Usage
 Get your api key by signing up at [www.themoviedb.org](https://www.themoviedb.org/documentation/api)
 
 ```javascript
-var tmdbclient = require('themoviedb-client');
+var tmdbclient = require('themoviedbclient');
 var tmdb = new tmdbclient(your_api_key);
 
 tmdb.call("/movie/293660", {})

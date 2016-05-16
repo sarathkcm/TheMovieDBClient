@@ -1,7 +1,7 @@
 TheMovieDBClient
 =======
 
-A simple node module to make calls to TheMovieDB API, based on EtienneWan's tmdb-js project, re-written with promises. 
+A simple node module to make calls to TheMovieDB API, based on [EtienneWan's tmdb-js](https://github.com/EtienneWan/tmdb-js), re-written with promises. 
 
 Usage
 -----------

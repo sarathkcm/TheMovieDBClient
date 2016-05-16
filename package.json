@@ -1,8 +1,8 @@
 {
-  "name": "TheMovieDB-Client",
+  "name": "TheMovieDBClient",
   "version": "0.1.0",
   "description": "A simple node module to make calls to TheMovieDB API",
-  "main": "themoviedb-client.js",
+  "main": "themoviedbclient.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -9,8 +9,8 @@ Usage
 Get your api key by signing up at [www.themoviedb.org](https://www.themoviedb.org/documentation/api)
 
 ```javascript
-var tmdb-client = require('themoviedb-client');
-var tmdb = new tmdb-client(your_api_key);
+var tmdbclient = require('themoviedb-client');
+var tmdb = new tmdbclient(your_api_key);
 
 tmdb.call("/movie/293660", {})
     .then(function (data) {

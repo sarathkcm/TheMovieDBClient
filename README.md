@@ -1,5 +1,6 @@
 TheMovieDBClient
 =======
+[![NPM](https://nodei.co/npm/themoviedbclient.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/themoviedbclient/)
 
 A simple node module to make calls to TheMovieDB API, based on [EtienneWan's tmdb-js](https://github.com/EtienneWan/tmdb-js), re-written with promises. 
 

@@ -7,7 +7,7 @@
         var settings = {
             "host": "api.themoviedb.org",
             "path": "/3",
-            "images_url": "http://image.tmdb.org/t/p/",
+            "images_url": "http://image.tmdb.org/t/p",
             "timeout": 5000,
             "update_images_url": true
         };
@@ -84,7 +84,7 @@
         };
         tmdb.prototype.getImageUrl = function (filename, size) {
             this.updateApiConfiguration();
-            return settings.images_url + size + filename;
+            return settings.images_url + "/" + size + filename;
         };
 
     };

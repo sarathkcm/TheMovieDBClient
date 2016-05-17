@@ -1,6 +1,6 @@
 {
   "name": "themoviedbclient",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A simple node module to make calls to TheMovieDB API",
   "main": "themoviedbclient.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "api",
     "metadata"
   ],
-  "author": "SarathKCM",
+  "author": "Sarath KCM",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/sarathkcm/TheMovieDBClient/issues"

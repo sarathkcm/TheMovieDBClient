@@ -84,7 +84,7 @@
         };
         tmdb.prototype.getImageUrl = function (filename, size) {
             this.updateApiConfiguration();
-            return tmdb.images_uri + size + filename;
+            return settings.images_url + size + filename;
         };
 
     };

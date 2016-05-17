@@ -7,7 +7,7 @@
         var settings = {
             "host": "api.themoviedb.org",
             "path": "/3",
-            "images_url": "http://image.tmdb.org/t/p",
+            "images_url": "http://image.tmdb.org/t/p/",
             "timeout": 5000,
             "update_images_url": true
         };

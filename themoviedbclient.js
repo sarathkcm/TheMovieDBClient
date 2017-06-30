@@ -29,7 +29,7 @@
         tmdb.prototype.configure = function (options) {
             settings.host = options.host || settings.host;
             settings.path = options.path || settings.path;
-            settings.images_url = options.host || settings.images_url;
+            settings.images_url = options.images_url || settings.images_url;
             settings.timeout = options.timeout || settings.timeout;
             settings.update_images_url = options.update_images_url || settings.update_images_url;
         };

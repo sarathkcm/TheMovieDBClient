@@ -1,6 +1,6 @@
 {
   "name": "themoviedbclient",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple node module to make calls to TheMovieDB API",
   "main": "themoviedbclient.js",
   "scripts": {

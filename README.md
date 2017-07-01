@@ -1,8 +1,8 @@
 TheMovieDBClient
 =======
-[![NPM](https://nodei.co/npm/themoviedbclient.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/themoviedbclient/)
-
 A simple node module to make calls to TheMovieDB API, based on [EtienneWan's tmdb-js](https://github.com/EtienneWan/tmdb-js), re-written with promises. 
+
+[![NPM](https://nodei.co/npm/themoviedbclient.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/themoviedbclient/)
 
 Usage
 -----------
@@ -26,6 +26,15 @@ tmdb.call("/find/tt1431045", {external_source:"imdb_id"})
 
 ```
 
+To get Image Urls of TMDb posters and backdrops, use the following method
+
+```javascript
+// poster_path: poster/backdrop filename returned by TMDb api,
+// 'W500' : pre-defined size constant. See API documentation for details 
+var url = tmdb.getImageUrl(poster_path, 'w500');
+```
+
+
 Various Urls defined inside the module are configurable
 
 ```javascript
@@ -40,13 +49,25 @@ tmdb.configure(
 );
 
 ```
+The configuration values wil be stored within the module and will be used for making the API calls. There is no need to specify all the options in the object passed to this object as the module will fallback to the default/previously configured values if an option is not specified.
 
-To get Image Urls of TMDb posters and backdrops, use the following method
+Confiuration Options
 
-```javascript
-// poster_path: poster/backdrop filename returned by TMDb api,
-// 'W500' : pre-defined size constant. See API documentation for details 
-var url = tmdb.getImageUrl(poster_path, 'w500');
+
+| Name              | Description                                                                                       | Default value                |
+|-------------------|---------------------------------------------------------------------------------------------------|------------------------------|
+| host              | Host of the TMDb API URL.                                                                         | "api.themoviedb.org"         |
+| path              | host + path forms the Base URL of the API                                                         | "/3"                         |
+| images_url        | HTTP API URL for downloading posters/images                                                       | "http://image.tmdb.org/t/p"  |
+| secure_images_url | HTTPS API URL for downloading posters/images                                                      | "https://image.tmdb.org/t/p" |
+| ssl               | If this is true, HTTPS version of API URLs will be used   (Thanks to @josephschmitt)              | false                        |
+| timeout           | Timeout for the API call                                                                          | 5000                         |
+| update_images_url | If this is true, the the latest URLs retrieved from TMDb API will be used for forming image URLS. | true                         |
+
+Use the following methods to get current settings.
+
+```Javascript
+tmdb.getCurrentSettings();      // Get the current module settings.
 ```
 
 LICENCE

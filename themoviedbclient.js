@@ -8,6 +8,8 @@
             "host": "api.themoviedb.org",
             "path": "/3",
             "images_url": "http://image.tmdb.org/t/p",
+            "secure_images_url": "https://image.tmdb.org/t/p",
+            "ssl": false,
             "timeout": 5000,
             "update_images_url": true
         };
@@ -18,7 +20,8 @@
             if (!tmdbConfig && settings.update_images_url) {
                 tmdbConfig = {};
                 this.call("/configuration", {}).then(function (response) {
-                    settings.images_uri = response.images.base_url;
+                    settings.images_url = response.images.base_url;
+                    settings.secure_images_url = response.images.secure_base_url;
                     tmdbConfig = response;
                 }, function (e) {
                     tmdbConfig = null;
@@ -29,7 +32,8 @@
         tmdb.prototype.configure = function (options) {
             settings.host = options.host || settings.host;
             settings.path = options.path || settings.path;
-            settings.images_url = options.host || settings.images_url;
+            settings.images_url = options.images_url || settings.images_url;
+            settings.ssl = options.ssl || settings.ssl;
             settings.timeout = options.timeout || settings.timeout;
             settings.update_images_url = options.update_images_url || settings.update_images_url;
         };
@@ -84,7 +88,7 @@
         };
         tmdb.prototype.getImageUrl = function (filename, size) {
             this.updateApiConfiguration();
-            return settings.images_url + "/" + size + filename;
+            return (settings.ssl ? settings.secure_images_url : settings.images_url) + "/" + size + filename;
         };
 
     };

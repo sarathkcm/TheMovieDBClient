@@ -74,7 +74,12 @@
                             });
 
                             response.on('end', function () {
-                                resolve(JSON.parse(res));
+                                try {
+                                    resolve(JSON.parse(res));
+                                }
+                                catch (err) {
+                                    reject(err);
+                                }
                             });
 
                         });
